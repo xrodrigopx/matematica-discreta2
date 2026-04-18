@@ -115,9 +115,15 @@ Una ecuación de la forma $ax \equiv b \pmod{m}$ busca hallar los valores de $x$
     - $22^{55} + 55^{22} \equiv 1 + 1 \equiv 2 \pmod{7}$.
 4. **Conclusión:** El resto es $2$, por lo tanto, no es múltiplo de $7$.
 
-### Ejemplo 2: Sistema de ecuaciones (Teorema Chino del Resto)
+**Ejemplo 2: Sistema de ecuaciones (Teorema Chino del Resto)**
 
-**Problema:** Resolver el sistema: $\begin{cases} x \equiv 1 \pmod{2} \ x \equiv 2 \pmod{3} \end{cases}$
+Problema: Resolver el sistema:
+$$
+\begin{cases}
+x \equiv 1 \pmod{2}\\
+x \equiv 2 \pmod{3}
+\end{cases}
+$$
 
 1. Identificar módulos: $m_1=2, m_2=3$. Son **coprimos**.
 2. Solución general: $x = x_0 + (2 \cdot 3)t = x_0 + 6t$.
