@@ -41,26 +41,46 @@ Si $a \equiv b \pmod{m}$ y $c \equiv d \pmod{m}$, se verifican las siguientes op
 4. **Multiplicación por una constante:** Si $k \in \mathbb{Z}$: $$k \cdot a \equiv k \cdot b \pmod{m}$$
 
 ---
+En esta sección se profundiza en los teoremas y principios fundamentales que permiten resolver sistemas complejos y simplificar expresiones de potencias abismales, basándose rigurosamente en los procedimientos algorítmicos de las fuentes.
+
+---
 
 ## 3. Teoremas Clave
 
-### 3.1. Generalización del Pequeño Teorema de Fermat
+### 3.1. Teorema Chino del Resto (TCR)
+El Teorema Chino del Resto es la herramienta principal para resolver sistemas de ecuaciones lineales de congruencia con diferentes módulos.
 
-Aunque no se nombra explícitamente en todas las fuentes, se demuestra su aplicación práctica. Por ejemplo, se analiza que $n^7 \equiv n \pmod{7}$ para todo $n$ natural. En general, para un número primo $p$: $$a^p \equiv a \pmod{p}$$
+*   **Condición de Existencia y Unicidad:** Para que el sistema tenga una solución única en el módulo resultante, los módulos individuales ($m_1, m_2, \dots, m_n$) deben ser **coprimos** dos a dos (su máximo común divisor debe ser 1). La solución será única en el módulo $M = m_1 \cdot m_2 \cdot \dots \cdot m_n$.
+*   **Algoritmo de Construcción del Candidato:**
+    1.  Se define un candidato $x_0$ como la suma de productos de los módulos tomados de dos en dos (o excluyendo el módulo propio de cada término):
+        Para tres ecuaciones: $x_0 = k_1(m_2 \cdot m_3) + k_2(m_1 \cdot m_3) + k_3(m_1 \cdot m_2)$.
+    2.  Este diseño asegura que, al analizar el candidato en un módulo específico (ej. $m_1$), los términos que contienen a $m_1$ como factor se anulen ($ \equiv 0$), facilitando el ajuste del coeficiente restante.
+    3.  Se ajusta cada coeficiente $k_i$ multiplicando por el **inverso modular** necesario para que la congruencia coincida con el valor deseado en el sistema original.
 
-### 3.2. Teorema Chino del Resto (TCR)
+### 3.2. Aplicación y Generalización del Pequeño Teorema de Fermat
+Aunque el nombre del teorema no siempre se menciona, su aplicación práctica es constante para probar propiedades de todos los números naturales.
 
-Este teorema es fundamental para resolver sistemas de ecuaciones en congruencias.
+*   **Enunciado Aplicado:** Para un número primo $p$, se cumple que $n^p \equiv n \pmod{p}$ para todo $n \in \mathbb{N}$. Esto implica que $n^p - n$ es siempre un **múltiplo** de $p$.
+*   **Reducción por Sistema Completo de Residuos:** Dado que cualquier número $n$ es congruente con uno de los restos $\{0, 1, 2, \dots, p-1\}$, para demostrar una propiedad para *todos* los naturales, basta con probarla para estos $p$ casos.
+*   **Ejemplo de Exponente Séptimo:** Las fuentes demuestran que $n^7 - n \equiv 0 \pmod{7}$ evaluando únicamente los restos del 0 al 6. Por ejemplo, si $n \equiv 3 \pmod{7}$, entonces $n^7 - n \equiv 3^7 - 3 = 2187 - 3 = 2184$, el cual es $312 \times 7$, cumpliendo la propiedad.
 
-- **Condición de Aplicación:** Los módulos $m_1, m_2, \dots, m_n$ deben ser **coprimos** dos a dos (es decir, el máximo común divisor entre cualquier par es 1).
-- **Enunciado:** El sistema tiene una solución única módulo $M$, donde $M = m_1 \cdot m_2 \cdot \dots \cdot m_n$.
+### 3.3. Teorema de Simplificación y el Inverso Modular
+Un principio clave para resolver ecuaciones del tipo $ax \equiv b \pmod{m}$ es la manipulación de coeficientes.
 
-**Algoritmo de resolución por construcción de candidato:**
+*   **Regla de la División:** No se puede dividir una congruencia por un factor común sin precaución. Si se divide toda la expresión (incluido el módulo) por un factor $d$, la congruencia se mantiene:
+    $$ax \equiv b \pmod{m} \implies \frac{a}{d}x \equiv \frac{b}{d} \pmod{\frac{m}{d}}$$
+    Esto se utiliza para "estandarizar" ecuaciones antes de aplicar el TCR.
+*   **El Inverso Modular:** Para despejar $x$ en $ax \equiv b \pmod{m}$, se busca el inverso $a^{-1}$ tal que $a \cdot a^{-1} \equiv 1 \pmod{m}$.
+    *   *Ejemplo:* En el módulo 7, el inverso de 2 es 4, ya que $2 \times 4 = 8 \equiv 1 \pmod{7}$.
+    *   *Ejemplo:* En el módulo 11, el inverso de 2 es 6, ya que $2 \times 6 = 12 \equiv 1 \pmod{11}$.
 
-1. Se busca una solución particular $x_0$.
-2. Se construye un candidato como suma de productos de los módulos de dos en dos (o omitiendo un módulo por término): $x = k_1(m_2 \cdot m_3) + k_2(m_1 \cdot m_3) + k_3(m_1 \cdot m_2)$.
-3. Se ajustan los coeficientes $k_i$ multiplicando por los **inversos modulares** necesarios para que el candidato satisfaga cada ecuación del sistema sin alterar las demás.
-4. La solución general es $x \equiv x_0 \pmod{M}$.
+### 3.4. Teorema de la Cifra Final (Módulo 10)
+Este teorema establece que la cifra de las unidades de cualquier número es su residuo al ser dividido por 10.
+*   **Propiedad de los Cuadrados:** Si $a + b \equiv 0 \pmod{10}$, entonces $a^2 \equiv b^2 \pmod{10}$. Esto demuestra que números cuya suma es múltiplo de 10 siempre tienen cuadrados que terminan en la misma cifra.
+*   **Punto de Anulación en Factoriales:** En sumas de factoriales, el término $n! \equiv 0 \pmod{10}$ para todo $n \ge 5$, debido a la presencia de los factores $2$ y $5$. Esto permite reducir sumas infinitas a cálculos de pocos términos.
+
+### 3.5. Criterio de Divisibilidad Universal
+A través de la congruencia, se demuestra que un número $N$ y la suma de sus cifras dejan el mismo resto en la división por $3$ (o por $9$), porque las potencias de 10 son siempre congruentes con 1 en esos módulos ($10^k \equiv 1^k \equiv 1 \pmod{3}$). Esto permite concluir que $N$ es múltiplo de 3 si y solo si la suma de sus dígitos lo es.
 
 ---
 
