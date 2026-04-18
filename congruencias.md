@@ -318,15 +318,58 @@ Hallar el conjunto de soluciones enteras (o el **sistema completo de residuos**)
 
 ---
 
-## 5. Sistemas de Ecuaciones en Congruencias
+### 5. Sistemas de Ecuaciones en Congruencias
+Resolución de sistemas utilizando el Teorema Chino del Resto o métodos de sustitución/igualación con módulos coprimos.
 
-Resolución de sistemas utilizando el **Teorema Chino del Resto** o métodos de sustitución/igualación con módulos **coprimos**.
+---
 
-- **Ejercicio 5.1:** Resolver el sistema de dos ecuaciones: $$\begin{cases} x \equiv 1 \pmod{2} \ x \equiv 2 \pmod{3} \end{cases}$$
-- **Ejercicio 5.2:** Resolver el sistema: $$\begin{cases} x \equiv 2 \pmod{3} \ x \equiv 1 \pmod{5} \end{cases}$$
-- **Ejercicio 5.3:** Resolver el sistema con coeficientes: $$\begin{cases} x \equiv -1 \pmod{7} \ 2x \equiv 5 \pmod{11} \end{cases}$$
-- **Ejercicio 5.4:** Resolver el sistema de tres ecuaciones: $$\begin{cases} x \equiv 2 \pmod{3} \ x \equiv 3 \pmod{5} \ x \equiv 1 \pmod{7} \end{cases}$$
-- **Ejercicio 5.5:** Resolver el siguiente sistema complejo (requiere estandarización previa de ecuaciones),: $$\begin{cases} 2x \equiv 1 \pmod{7} \ x \equiv 1 \pmod{5} \ 4x - 2x \equiv 32 \pmod{6} \ 4x \equiv 6 \pmod{2} \end{cases}$$
+#### Ejercicio 5.1
+Resolver el sistema de dos ecuaciones:
+$$
+\begin{cases} 
+x \equiv 1 \pmod{2} \\ 
+x \equiv 2 \pmod{3} 
+\end{cases}
+$$
+
+#### Ejercicio 5.2
+Resolver el sistema:
+$$
+\begin{cases} 
+x \equiv 2 \pmod{3} \\ 
+x \equiv 1 \pmod{5} 
+\end{cases}
+$$
+
+#### Ejercicio 5.3
+Resolver el sistema con coeficientes (recuerda hallar el inverso modular de 2 mod 11):
+$$
+\begin{cases} 
+x \equiv -1 \pmod{7} \\ 
+2x \equiv 5 \pmod{11} 
+\end{cases}
+$$
+
+#### Ejercicio 5.4
+Resolver el sistema de tres ecuaciones:
+$$
+\begin{cases} 
+x \equiv 2 \pmod{3} \\ 
+x \equiv 3 \pmod{5} \\ 
+x \equiv 1 \pmod{7} 
+\end{cases}
+$$
+
+#### Ejercicio 5.5
+Resolver el siguiente sistema complejo (requiere estandarización previa de ecuaciones y verificar compatibilidad de módulos no coprimos):
+$$
+\begin{cases} 
+2x \equiv 1 \pmod{7} \\ 
+x \equiv 1 \pmod{5} \\ 
+2x \equiv 32 \pmod{6} \\ 
+4x \equiv 6 \pmod{2} 
+\end{cases}
+$$
 
 ---
 
