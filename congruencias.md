@@ -379,4 +379,4 @@ $$
 
 ---
 
-**Última actualización:** $(Fecha)$
+**Última actualización:** $(18-04-2026)$
