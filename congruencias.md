@@ -342,7 +342,7 @@ x \equiv 1 \pmod{5}
 $$
 
 #### Ejercicio 5.3
-Resolver el sistema con coeficientes (recuerda hallar el inverso modular de 2 mod 11):
+Resolver el sistema con coeficientes:
 $$
 \begin{cases} 
 x \equiv -1 \pmod{7} \\ 
@@ -361,7 +361,7 @@ x \equiv 1 \pmod{7}
 $$
 
 #### Ejercicio 5.5
-Resolver el siguiente sistema complejo (requiere estandarización previa de ecuaciones y verificar compatibilidad de módulos no coprimos):
+Resolver el siguiente sistema complejo:
 $$
 \begin{cases} 
 2x \equiv 1 \pmod{7} \\ 
