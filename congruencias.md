@@ -143,10 +143,12 @@ Una ecuación de la forma $ax \equiv b \pmod{m}$ busca hallar los valores de $x$
 
 **Problema:** Resolver el sistema:
 
-$$\begin{cases}
-x \equiv 1 \pmod{2}\\
+$$
+\begin{cases}
+x \equiv 1 \pmod{2} \\
 x \equiv 2 \pmod{3}
-\end{cases}$$
+\end{cases}
+$$
 
 **Solución:**
 
@@ -305,55 +307,59 @@ Cuando un exponente es muy grande, los números resultantes se vuelven inmanejab
 
 ### Ecuaciones Lineales de Congruencia
 
-Resolver el sistema de dos ecuaciones:
+Hallar todas las soluciones enteras:
 
+1. $x \equiv 4 \pmod{7}$
+2. $3x \equiv 2 \pmod{7}$
+3. $4x \equiv 7 \pmod{5}$
+4. $6x \equiv 3 \pmod{4}$
+5. $4x \equiv 2 \pmod{6}$
+6. $2x \equiv 1 \pmod{6}$
+
+### Sistemas de Ecuaciones en Congruencias
+
+1. 
 $$
 \begin{cases}
-x \equiv 1 \pmod{2}\\
+x \equiv 1 \pmod{2} \\
 x \equiv 2 \pmod{3}
 \end{cases}
 $$
 
-
+2. 
 $$
 \begin{cases}
-x \equiv 2 \pmod{3}\\
+x \equiv 2 \pmod{3} \\
 x \equiv 1 \pmod{5}
 \end{cases}
 $$
 
-
-
+3. 
 $$
 \begin{cases}
-x \equiv -1 \pmod{7}\\
+x \equiv -1 \pmod{7} \\
 2x \equiv 5 \pmod{11}
 \end{cases}
 $$
 
-
-
+4. 
 $$
 \begin{cases}
-x \equiv 2 \pmod{3}\\
-x \equiv 3 \pmod{5}\\
+x \equiv 2 \pmod{3} \\
+x \equiv 3 \pmod{5} \\
 x \equiv 1 \pmod{7}
 \end{cases}
 $$
 
-
-
+5. 
 $$
 \begin{cases}
-2x \equiv 1 \pmod{7}\\
-x \equiv 1 \pmod{5}\\
-2x \equiv 32 \pmod{6}\\
+2x \equiv 1 \pmod{7} \\
+x \equiv 1 \pmod{5} \\
+2x \equiv 32 \pmod{6} \\
 4x \equiv 6 \pmod{2}
 \end{cases}
 $$
-
----
-
 
 ### Ejercicios Adicionales de Práctica
 
