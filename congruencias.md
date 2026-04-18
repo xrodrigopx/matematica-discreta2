@@ -46,14 +46,14 @@ En esta sección se profundiza en los teoremas y principios fundamentales que pe
 ---
 
 ## 3. Teoremas Clave
-
 ### 3.1. Teorema Chino del Resto (TCR)
 El Teorema Chino del Resto es la herramienta principal para resolver sistemas de ecuaciones lineales de congruencia con diferentes módulos.
 
-*   **Condición de Existencia y Unicidad:** Para que el sistema tenga una solución única en el módulo resultante, los módulos individuales ($m_1, m_2, \dots, m_n$) deben ser **coprimos** dos a dos (su máximo común divisor debe ser 1). La solución será única en el módulo $M = m_1 \cdot m_2 \cdot \dots \cdot m_n$.
-*   **Algoritmo de Construcción del Candidato:**
-    1.  Se define un candidato $x_0$ como la suma de productos de los módulos tomados de dos en dos (o excluyendo el módulo propio de cada término):
-        Para tres ecuaciones: $x_0 = k_1(m_2 \cdot m_3) + k_2(m_1 \cdot m_3) + k_3(m_1 \cdot m_2)$.
+* **Condición de Existencia y Unicidad:** Para que el sistema tenga una solución única, los módulos ($m_1, m_2, \dots, m_n$) deben ser **coprimos** dos a dos ($\text{mcd}=1$). La solución es única módulo $M = \prod m_i$.
+* **Algoritmo de Construcción:**
+    1. Se define un candidato $x_0$ como la suma de productos de los módulos excluyendo el propio. Para tres ecuaciones: $x_0 = k_1(m_2 m_3) + k_2(m_1 m_3) + k_3(m_1 m_2)$.
+    2. Al analizar $x_0 \pmod{m_1}$, los términos con $m_1$ se anulan.
+    3. Se ajusta cada $k_i$ con el **inverso modular** correspondiente.
     2.  Este diseño asegura que, al analizar el candidato en un módulo específico (ej. $m_1$), los términos que contienen a $m_1$ como factor se anulen ($ \equiv 0$), facilitando el ajuste del coeficiente restante.
     3.  Se ajusta cada coeficiente $k_i$ multiplicando por el **inverso modular** necesario para que la congruencia coincida con el valor deseado en el sistema original.
 
@@ -63,14 +63,12 @@ Aunque el nombre del teorema no siempre se menciona, su aplicación práctica es
 *   **Enunciado Aplicado:** Para un número primo $p$, se cumple que $n^p \equiv n \pmod{p}$ para todo $n \in \mathbb{N}$. Esto implica que $n^p - n$ es siempre un **múltiplo** de $p$.
 *   **Reducción por Sistema Completo de Residuos:** Dado que cualquier número $n$ es congruente con uno de los restos $\{0, 1, 2, \dots, p-1\}$, para demostrar una propiedad para *todos* los naturales, basta con probarla para estos $p$ casos.
 *   **Ejemplo de Exponente Séptimo:** Las fuentes demuestran que $n^7 - n \equiv 0 \pmod{7}$ evaluando únicamente los restos del 0 al 6. Por ejemplo, si $n \equiv 3 \pmod{7}$, entonces $n^7 - n \equiv 3^7 - 3 = 2187 - 3 = 2184$, el cual es $312 \times 7$, cumpliendo la propiedad.
+### 3.3. Teorema de Simplificación
 
-### 3.3. Teorema de Simplificación y el Inverso Modular
-Un principio clave para resolver ecuaciones del tipo $ax \equiv b \pmod{m}$ es la manipulación de coeficientes.
-
-*   **Regla de la División:** No se puede dividir una congruencia por un factor común sin precaución. Si se divide toda la expresión (incluido el módulo) por un factor $d$, la congruencia se mantiene:
-    $$ax \equiv b \pmod{m} \implies \frac{a}{d}x \equiv \frac{b}{d} \pmod{\frac{m}{d}}$$
-    Esto se utiliza para "estandarizar" ecuaciones antes de aplicar el TCR.
-*   **El Inverso Modular:** Para despejar $x$ en $ax \equiv b \pmod{m}$, se busca el inverso $a^{-1}$ tal que $a \cdot a^{-1} \equiv 1 \pmod{m}$.
+* **Regla de la División:** No se puede dividir una congruencia por un factor común sin precaución:
+  $$ax \equiv b \pmod{m} \implies \frac{a}{d}x \equiv \frac{b}{d} \pmod{\frac{m}{d}}$$
+  
+* **El Inverso Modular:** Se busca $a^{-1}$ tal que $a \cdot a^{-1} \equiv 1 \pmod{m}$.
     *   *Ejemplo:* En el módulo 7, el inverso de 2 es 4, ya que $2 \times 4 = 8 \equiv 1 \pmod{7}$.
     *   *Ejemplo:* En el módulo 11, el inverso de 2 es 6, ya que $2 \times 6 = 12 \equiv 1 \pmod{11}$.
 
