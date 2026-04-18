@@ -1,5 +1,8 @@
 Este documento constituye un cuerpo de conocimiento estructurado sobre la aritmética modular y la teoría de congruencias, analizado desde una perspectiva formal.
 
+Fuente: https://www.youtube.com/playlist?list=PL9lU_vBIadAza60esGrXuFaKj3mmL1nRA
+
+
 ---
 
 ## 1. Definiciones Formales
